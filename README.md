@@ -72,7 +72,6 @@ AI-Enhanced Task Tracker — a .NET 8 + EF Core + SQL Server + OpenAI integratio
 Goal: CRUD app with AI-generated task summaries.
 
 ---
-
 ## 📫 Connect with Me
 	•	💼 LinkedIn: https://www.linkedin.com/in/thapelo-selebedi-a328bb69/￼
 	•	🧑🏾‍💻 GitHub: https://github.com/Yizo-Yizo
