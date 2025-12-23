@@ -56,6 +56,7 @@ public class Solution {
         return indecies;
     }
 }
+```csharp
 
 ⏱️ Complexity
 	•	Time: O(n²)
