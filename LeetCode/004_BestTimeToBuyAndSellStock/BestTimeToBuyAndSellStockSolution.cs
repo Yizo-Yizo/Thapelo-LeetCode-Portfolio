@@ -1,32 +1,23 @@
 public class BestTimeToBuyAndSellStockSolution
 {
-    public int MaxProfit(int[] prices)
+public int MaxProfit(int[] prices)
     {
-        int buy = prices[1], sell = prices[1];
-        bool isBought = false, isSold = false;
+        int minPrice = int.MaxValue;
+        int maxProfit = 0;
 
-        for (int i = 2; i < prices.Length; i++)
+        for (int i = 0; i < prices.Length; i++)
         {
-            if (prices[i] < buy)
+            if (prices[i] < minPrice)
             {
-                buy = prices[i];
-                isBought = true;
+                minPrice = prices[i]; // buy here
             }
-            if (prices[i] > sell)
+            else
             {
-                sell = prices[i];
-                isSold = true;
+                int profit = prices[i] - minPrice; // sell here
+                maxProfit = Math.Max(maxProfit, profit);
             }
         }
 
-        if (isBought == false)
-        {
-            buy = 0;
-        }
-        if (isSold == false)
-        {
-            sell = 0;
-        }
-        return sell - buy;
+        return maxProfit;
     }
 }
