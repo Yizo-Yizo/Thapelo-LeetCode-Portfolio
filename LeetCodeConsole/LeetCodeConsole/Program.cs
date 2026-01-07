@@ -112,6 +112,7 @@ namespace LeetCodeConsole
                 Console.WriteLine();
                 Console.WriteLine("  [1] Recyclable and Low Fat Products");
                 Console.WriteLine("  [2] Customers Who Visited but Did Not Make Transactions");
+                Console.WriteLine("  [3] Employee Bonus");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -126,6 +127,9 @@ namespace LeetCodeConsole
                         break;
                     case "2":
                         CustomerWhoVisitedbutDidNotMakeAnyTransactions.DisplayProblem();
+                        break;
+                    case "3":
+                        EmployeeBonus.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
