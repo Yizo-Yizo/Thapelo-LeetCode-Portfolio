@@ -65,6 +65,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [2] Valid Anagram");
                 Console.WriteLine("  [3] Evaluate Reverse Polish Notation");
                 Console.WriteLine("  [4] Best Time to Buy and Sell Stock");
+                Console.WriteLine("  [5] Move Zeroes");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -85,6 +86,9 @@ namespace LeetCodeConsole
                         break;
                     case "4":
                         RunMaxProfit();
+                        break;
+                    case "5":
+                        RunMoveZeroes();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -286,6 +290,40 @@ namespace LeetCodeConsole
             Console.WriteLine($"Output: {result3}");
             Console.WriteLine($"Expected: 10");
             Console.WriteLine($"Explanation: Buy on day 3 (price = 1) and sell on day 6 (price = 11), profit = 11-1 = 10\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMoveZeroes()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Move Zeroes");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new MoveZeroesSolution();
+
+            // Test case 1
+            int[] nums1 = { 0, 1, 0, 3, 12 };
+            solution.MoveZeroes(nums1);
+            Console.WriteLine($"Test 1: nums = [0, 1, 0, 3, 12]");
+            Console.WriteLine($"Output: [{string.Join(", ", nums1)}]");
+            Console.WriteLine($"Expected: [1, 3, 12, 0, 0]\n");
+
+            // Test case 2
+            int[] nums2 = { 0 };
+            solution.MoveZeroes(nums2);
+            Console.WriteLine($"Test 2: nums = [0]");
+            Console.WriteLine($"Output: [{string.Join(", ", nums2)}]");
+            Console.WriteLine($"Expected: [0]\n");
+
+            // Test case 3
+            int[] nums3 = { 1, 2, 3, 4, 5 };
+            solution.MoveZeroes(nums3);
+            Console.WriteLine($"Test 3: nums = [1, 2, 3, 4, 5]");
+            Console.WriteLine($"Output: [{string.Join(", ", nums3)}]");
+            Console.WriteLine($"Expected: [1, 2, 3, 4, 5]\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
