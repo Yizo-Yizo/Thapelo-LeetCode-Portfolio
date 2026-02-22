@@ -71,6 +71,9 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [8] Reverse Linked List");
                 Console.WriteLine("  [9] Valid Parentheses");
                 Console.WriteLine("  [10] Implement Queue Using Stacks");
+                Console.WriteLine("  [11] Min Stack");
+                Console.WriteLine("  [12] Maximum Depth of Binary Tree");
+                Console.WriteLine("  [13] Fibonacci Number");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -110,6 +113,15 @@ namespace LeetCodeConsole
                     case "10":
                         RunImplementQueueUsingStacks();
                         break;
+                    case "11":
+                        RunMinStack();
+                        break;
+                    case "12":
+                        RunMaximumDepthOfBinaryTree();
+                        break;
+                    case "13":
+                        RunFibonacciNumber();
+                        break;
                     case "0":
                         inCSharpMenu = false;
                         break;
@@ -139,6 +151,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [3] Employee Bonus");
                 Console.WriteLine("  [4] Not Boring Movies");
                 Console.WriteLine("  [5] Average Selling Price");
+                Console.WriteLine("  [6] Rank Scores");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -162,6 +175,9 @@ namespace LeetCodeConsole
                         break;
                     case "5":
                         AverageSellingPrice.DisplayProblem();
+                        break;
+                    case "6":
+                        RankScores.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
@@ -575,6 +591,131 @@ namespace LeetCodeConsole
             Console.WriteLine($"  Empty: {queue2.Empty()} (Expected: False)");
             Console.WriteLine($"  Pop: {queue2.Pop()} (Expected: 30)");
             Console.WriteLine($"  Empty: {queue2.Empty()} (Expected: True)");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMinStack()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Min Stack");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var minStack = new MinStackSolution();
+
+            Console.WriteLine("Operations:");
+            Console.WriteLine("  minStack.Push(-2)");
+            minStack.Push(-2);
+            Console.WriteLine("  minStack.Push(0)");
+            minStack.Push(0);
+            Console.WriteLine("  minStack.Push(-3)");
+            minStack.Push(-3);
+
+            Console.WriteLine($"  minStack.GetMin() -> {minStack.GetMin()}");
+            Console.WriteLine($"  Expected: -3\n");
+
+            Console.WriteLine("  minStack.Pop()");
+            minStack.Pop();
+
+            Console.WriteLine($"  minStack.Top() -> {minStack.Top()}");
+            Console.WriteLine($"  Expected: 0\n");
+
+            Console.WriteLine($"  minStack.GetMin() -> {minStack.GetMin()}");
+            Console.WriteLine($"  Expected: -2\n");
+
+            // Additional test
+            Console.WriteLine("Additional test:");
+            var minStack2 = new MinStackSolution();
+            minStack2.Push(5);
+            minStack2.Push(3);
+            minStack2.Push(7);
+            minStack2.Push(1);
+            Console.WriteLine("  Push: 5, 3, 7, 1");
+            Console.WriteLine($"  GetMin: {minStack2.GetMin()} (Expected: 1)");
+            minStack2.Pop();
+            Console.WriteLine("  Pop");
+            Console.WriteLine($"  GetMin: {minStack2.GetMin()} (Expected: 3)");
+            Console.WriteLine($"  Top: {minStack2.Top()} (Expected: 7)");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMaximumDepthOfBinaryTree()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Maximum Depth of Binary Tree");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new MaximumDepthofBinaryTreeSolution();
+
+            // Test case 1: [3,9,20,null,null,15,7] -> depth 3
+            var root1 = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+            int result1 = solution.MaxDepth(root1);
+            Console.WriteLine("Test 1: root = [3, 9, 20, null, null, 15, 7]");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 3\n");
+
+            // Test case 2: [1,null,2] -> depth 2
+            var root2 = new TreeNode(1, null, new TreeNode(2));
+            int result2 = solution.MaxDepth(root2);
+            Console.WriteLine("Test 2: root = [1, null, 2]");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 2\n");
+
+            // Test case 3: [] -> depth 0
+            int result3 = solution.MaxDepth(null);
+            Console.WriteLine("Test 3: root = []");
+            Console.WriteLine($"Output: {result3}");
+            Console.WriteLine("Expected: 0\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunFibonacciNumber()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Fibonacci Number");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new FibonacciNumberSolution();
+
+            // Test case 1
+            int result1 = solution.Fib(2);
+            Console.WriteLine("Test 1: n = 2");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 1\n");
+
+            // Test case 2
+            int result2 = solution.Fib(3);
+            Console.WriteLine("Test 2: n = 3");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 2\n");
+
+            // Test case 3
+            int result3 = solution.Fib(4);
+            Console.WriteLine("Test 3: n = 4");
+            Console.WriteLine($"Output: {result3}");
+            Console.WriteLine("Expected: 3\n");
+
+            // Test case 4
+            int result4 = solution.Fib(0);
+            Console.WriteLine("Test 4: n = 0");
+            Console.WriteLine($"Output: {result4}");
+            Console.WriteLine("Expected: 0\n");
+
+            // Test case 5
+            int result5 = solution.Fib(1);
+            Console.WriteLine("Test 5: n = 1");
+            Console.WriteLine($"Output: {result5}");
+            Console.WriteLine("Expected: 1\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
