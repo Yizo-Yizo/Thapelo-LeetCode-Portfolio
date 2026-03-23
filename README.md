@@ -10,8 +10,6 @@ This repository documents my progress in:
 
 My primary implementation language is **C# (.NET 8)**.
 
----
-
 ## 📆 Study Timeline
 
 **23 Dec 2025 – 16 Mar 2026**
@@ -24,8 +22,6 @@ My primary implementation language is **C# (.NET 8)**.
 | 🚀 Phase 4 | AI-Enhanced Task Tracker           | ASP.NET Core project        |
 | 🔁 Phase 5 | Reflection & CV Update             | GitHub + LinkedIn post      |
 
----
-
 ## 🧩 Repository Structure
 
 Each problem folder contains:
@@ -36,16 +32,12 @@ Each problem folder contains:
 
 This structure encourages clarity, repeatability, and deliberate learning.
 
----
-
 ## 🧠 Example Problem
 
 ### Problem: Two Sum
 
 🔗 **LeetCode #1 – Two Sum**
 [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
-
----
 
 ### My Solution (C#)
 
@@ -81,8 +73,6 @@ public class Solution
 * This solution prioritizes clarity before optimization.
 * Future iterations will include a hash-map based **O(n)** approach.
 
----
-
 ## 🚀 Upcoming Project
 
 ### 🤖 AI-Enhanced Task Tracker
@@ -96,8 +86,6 @@ A full-stack **ASP.NET Core** application designed to:
 
 This project bridges **algorithms, SQL, and AI-assisted productivity** into a real-world system.
 
----
-
 ## 🔁 Reflection Goals
 
 By the end of this journey, I aim to:
@@ -107,11 +95,9 @@ By the end of this journey, I aim to:
 * Maintain clean, explainable, and maintainable code
 * Translate learning into practical, production-minded systems
 
----
-
 ## 🤝 Connect With Me
 
 * 🧑‍💻 **GitHub:** [https://github.com/Yizo-Yizo](https://github.com/Yizo-Yizo)
-* 💼 **LinkedIn:** *(coming soon)*
+* 💼 **LinkedIn:** [https://www.linkedin.com/in/thapelo-selebedi-a328bb69](https://www.linkedin.com/in/thapelo-selebedi-a328bb69)
 
 If you’re on a similar learning path or interested in collaboration, feel free to connect.
