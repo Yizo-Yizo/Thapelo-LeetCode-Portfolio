@@ -75,6 +75,8 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [12] Maximum Depth of Binary Tree");
                 Console.WriteLine("  [13] Fibonacci Number");
                 Console.WriteLine("  [14] Merge Sorted Array");
+                Console.WriteLine("  [15] Search Insert Position");
+                Console.WriteLine("  [16] Climbing Stairs");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -126,6 +128,12 @@ namespace LeetCodeConsole
                     case "14":
                         RunMergeSortedArray();
                         break;
+                    case "15":
+                        RunSearchInsertPosition();
+                        break;
+                    case "16":
+                        RunClimbingStairs();
+                        break;
                     case "0":
                         inCSharpMenu = false;
                         break;
@@ -156,6 +164,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [4] Not Boring Movies");
                 Console.WriteLine("  [5] Average Selling Price");
                 Console.WriteLine("  [6] Rank Scores");
+                Console.WriteLine("  [7] Nth Highest Salary");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -182,6 +191,9 @@ namespace LeetCodeConsole
                         break;
                     case "6":
                         RankScores.DisplayProblem();
+                        break;
+                    case "7":
+                        NthHighestSalary.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
@@ -720,6 +732,76 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunClimbingStairs()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Climbing Stairs");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new StairClimbersSolution();
+
+            // Test case 1
+            int result1 = solution.ClimbStairs(2);
+            Console.WriteLine("Test 1: n = 2");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 2");
+            Console.WriteLine("Explanation: 1+1, 2\n");
+
+            // Test case 2
+            int result2 = solution.ClimbStairs(3);
+            Console.WriteLine("Test 2: n = 3");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 3");
+            Console.WriteLine("Explanation: 1+1+1, 1+2, 2+1\n");
+
+            // Test case 3
+            int result3 = solution.ClimbStairs(5);
+            Console.WriteLine("Test 3: n = 5");
+            Console.WriteLine($"Output: {result3}");
+            Console.WriteLine("Expected: 8\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunSearchInsertPosition()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Search Insert Position");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new SearchInsertPositionSolution();
+
+            // Test case 1
+            int[] nums1 = { 1, 3, 5, 6 };
+            int target1 = 5;
+            int result1 = solution.SearchInsert(nums1, target1);
+            Console.WriteLine($"Test 1: nums = [{string.Join(", ", nums1)}], target = {target1}");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine($"Expected: 2\n");
+
+            // Test case 2
+            int[] nums2 = { 1, 3, 5, 6 };
+            int target2 = 2;
+            int result2 = solution.SearchInsert(nums2, target2);
+            Console.WriteLine($"Test 2: nums = [{string.Join(", ", nums2)}], target = {target2}");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine($"Expected: 1\n");
+
+            // Test case 3
+            int[] nums3 = { 1, 3, 5, 6 };
+            int target3 = 7;
+            int result3 = solution.SearchInsert(nums3, target3);
+            Console.WriteLine($"Test 3: nums = [{string.Join(", ", nums3)}], target = {target3}");
+            Console.WriteLine($"Output: {result3}");
+            Console.WriteLine($"Expected: 4\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
