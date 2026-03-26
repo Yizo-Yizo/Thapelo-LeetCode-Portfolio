@@ -77,6 +77,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [14] Merge Sorted Array");
                 Console.WriteLine("  [15] Search Insert Position");
                 Console.WriteLine("  [16] Climbing Stairs");
+                Console.WriteLine("  [17] Maximum Depth of N-ary Tree");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -134,6 +135,9 @@ namespace LeetCodeConsole
                     case "16":
                         RunClimbingStairs();
                         break;
+                    case "17":
+                        RunMaximumDepthOfNaryTree();
+                        break;
                     case "0":
                         inCSharpMenu = false;
                         break;
@@ -165,6 +169,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [5] Average Selling Price");
                 Console.WriteLine("  [6] Rank Scores");
                 Console.WriteLine("  [7] Nth Highest Salary");
+                Console.WriteLine("  [8] Department Top Three Salaries");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -194,6 +199,9 @@ namespace LeetCodeConsole
                         break;
                     case "7":
                         NthHighestSalary.DisplayProblem();
+                        break;
+                    case "8":
+                        DepartmentTopThreeSalaries.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
@@ -731,6 +739,44 @@ namespace LeetCodeConsole
             int result5 = solution.Fib(1);
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
+            Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMaximumDepthOfNaryTree()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Maximum Depth of N-ary Tree");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new MaximumDepthofNaryTreeSolution();
+
+            // Test case 1: [1,null,3,2,4,null,5,6] => depth 3
+            var root1 = new Node(1, new List<Node>
+            {
+                new Node(3, new List<Node> { new Node(5), new Node(6) }),
+                new Node(2),
+                new Node(4)
+            });
+            int result1 = solution.MaxDepth(root1);
+            Console.WriteLine("Test 1: root = [1,null,3,2,4,null,5,6]");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 3\n");
+
+            // Test case 2: null => depth 0
+            int result2 = solution.MaxDepth(null);
+            Console.WriteLine("Test 2: root = null");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 0\n");
+
+            // Test case 3: single node => depth 1
+            var root3 = new Node(1, new List<Node>());
+            int result3 = solution.MaxDepth(root3);
+            Console.WriteLine("Test 3: root = [1]");
+            Console.WriteLine($"Output: {result3}");
             Console.WriteLine("Expected: 1\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
