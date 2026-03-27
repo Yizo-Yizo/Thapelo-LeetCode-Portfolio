@@ -78,6 +78,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [15] Search Insert Position");
                 Console.WriteLine("  [16] Climbing Stairs");
                 Console.WriteLine("  [17] Maximum Depth of N-ary Tree");
+                Console.WriteLine("  [18] Binary Tree Level Order Traversal");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -137,6 +138,9 @@ namespace LeetCodeConsole
                         break;
                     case "17":
                         RunMaximumDepthOfNaryTree();
+                        break;
+                    case "18":
+                        RunBinaryTreeLevelOrderTraversal();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -740,6 +744,41 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunBinaryTreeLevelOrderTraversal()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════════════");
+            Console.WriteLine("  Problem: Binary Tree Level Order Traversal");
+            Console.WriteLine("═══════════════════════════════════════════════\n");
+
+            var solution = new BinaryTreeLevelOrderTraversalSolution();
+
+            // Test case 1: [3,9,20,null,null,15,7] => [[3],[9,20],[15,7]]
+            var root1 = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+            var result1 = solution.LevelOrder(root1);
+            Console.WriteLine("Test 1: root = [3,9,20,null,null,15,7]");
+            Console.WriteLine($"Output: [{string.Join(", ", result1.Select(l => "[" + string.Join(",", l) + "]"))}]");
+            Console.WriteLine("Expected: [[3],[9,20],[15,7]]\n");
+
+            // Test case 2: [1] => [[1]]
+            var root2 = new TreeNode(1);
+            var result2 = solution.LevelOrder(root2);
+            Console.WriteLine("Test 2: root = [1]");
+            Console.WriteLine($"Output: [{string.Join(", ", result2.Select(l => "[" + string.Join(",", l) + "]"))}]");
+            Console.WriteLine("Expected: [[1]]\n");
+
+            // Test case 3: null => []
+            var result3 = solution.LevelOrder(null);
+            Console.WriteLine("Test 3: root = null");
+            Console.WriteLine($"Output: [{string.Join(", ", result3.Select(l => "[" + string.Join(",", l) + "]"))}]");
+            Console.WriteLine("Expected: []\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
