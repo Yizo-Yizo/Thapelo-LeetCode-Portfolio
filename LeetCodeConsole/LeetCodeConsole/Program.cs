@@ -178,6 +178,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [6] Rank Scores");
                 Console.WriteLine("  [7] Nth Highest Salary");
                 Console.WriteLine("  [8] Department Top Three Salaries");
+                Console.WriteLine("  [9] Consecutive Numbers");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -210,6 +211,9 @@ namespace LeetCodeConsole
                         break;
                     case "8":
                         DepartmentTopThreeSalaries.DisplayProblem();
+                        break;
+                    case "9":
+                        ConsecutiveNumbers.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
