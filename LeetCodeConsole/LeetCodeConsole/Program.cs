@@ -79,6 +79,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [16] Climbing Stairs");
                 Console.WriteLine("  [17] Maximum Depth of N-ary Tree");
                 Console.WriteLine("  [18] Binary Tree Level Order Traversal");
+                Console.WriteLine("  [19] Kth Largest Element in an Array");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -141,6 +142,9 @@ namespace LeetCodeConsole
                         break;
                     case "18":
                         RunBinaryTreeLevelOrderTraversal();
+                        break;
+                    case "19":
+                        RunKthLargestElement();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -743,6 +747,40 @@ namespace LeetCodeConsole
             int result5 = solution.Fib(1);
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
+            Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunKthLargestElement()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════════════");
+            Console.WriteLine("  Problem: Kth Largest Element in an Array");
+            Console.WriteLine("═══════════════════════════════════════════════\n");
+
+            var solution = new KthLargestElementSolution();
+
+            // Test case 1: [3,2,1,5,6,4], k=2 => 5
+            int[] nums1 = { 3, 2, 1, 5, 6, 4 };
+            int result1 = solution.FindKthLargest(nums1, 2);
+            Console.WriteLine("Test 1: nums = [3,2,1,5,6,4], k = 2");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 5\n");
+
+            // Test case 2: [3,2,3,1,2,4,5,5,6], k=4 => 4
+            int[] nums2 = { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
+            int result2 = solution.FindKthLargest(nums2, 4);
+            Console.WriteLine("Test 2: nums = [3,2,3,1,2,4,5,5,6], k = 4");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 4\n");
+
+            // Test case 3: [1], k=1 => 1
+            int[] nums3 = { 1 };
+            int result3 = solution.FindKthLargest(nums3, 1);
+            Console.WriteLine("Test 3: nums = [1], k = 1");
+            Console.WriteLine($"Output: {result3}");
             Console.WriteLine("Expected: 1\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
