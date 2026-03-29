@@ -80,6 +80,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [17] Maximum Depth of N-ary Tree");
                 Console.WriteLine("  [18] Binary Tree Level Order Traversal");
                 Console.WriteLine("  [19] Kth Largest Element in an Array");
+                Console.WriteLine("  [20] Majority Element");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -145,6 +146,9 @@ namespace LeetCodeConsole
                         break;
                     case "19":
                         RunKthLargestElement();
+                        break;
+                    case "20":
+                        RunMajorityElement();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -751,6 +755,40 @@ namespace LeetCodeConsole
             int result5 = solution.Fib(1);
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
+            Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunMajorityElement()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Majority Element");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new MajorityElementSolution();
+
+            // Test case 1: [3,2,3] => 3
+            int[] nums1 = { 3, 2, 3 };
+            int result1 = solution.MajorityElement(nums1);
+            Console.WriteLine("Test 1: nums = [3,2,3]");
+            Console.WriteLine($"Output: {result1}");
+            Console.WriteLine("Expected: 3\n");
+
+            // Test case 2: [2,2,1,1,1,2,2] => 2
+            int[] nums2 = { 2, 2, 1, 1, 1, 2, 2 };
+            int result2 = solution.MajorityElement(nums2);
+            Console.WriteLine("Test 2: nums = [2,2,1,1,1,2,2]");
+            Console.WriteLine($"Output: {result2}");
+            Console.WriteLine("Expected: 2\n");
+
+            // Test case 3: [1] => 1
+            int[] nums3 = { 1 };
+            int result3 = solution.MajorityElement(nums3);
+            Console.WriteLine("Test 3: nums = [1]");
+            Console.WriteLine($"Output: {result3}");
             Console.WriteLine("Expected: 1\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
