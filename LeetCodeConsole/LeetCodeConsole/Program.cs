@@ -81,6 +81,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [18] Binary Tree Level Order Traversal");
                 Console.WriteLine("  [19] Kth Largest Element in an Array");
                 Console.WriteLine("  [20] Majority Element");
+                Console.WriteLine("  [21] Product of Array Except Self");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -149,6 +150,9 @@ namespace LeetCodeConsole
                         break;
                     case "20":
                         RunMajorityElement();
+                        break;
+                    case "21":
+                        RunProductOfArrayExceptSelf();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -756,6 +760,33 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunProductOfArrayExceptSelf()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════════════");
+            Console.WriteLine("  Problem: Product of Array Except Self");
+            Console.WriteLine("═══════════════════════════════════════════════\n");
+
+            var solution = new ProductOfArrayExceptSelfSolution();
+
+            // Test case 1: [1,2,3,4] => [24,12,8,6]
+            int[] nums1 = { 1, 2, 3, 4 };
+            int[] result1 = solution.ProductExceptSelf(nums1);
+            Console.WriteLine("Test 1: nums = [1,2,3,4]");
+            Console.WriteLine($"Output:   [{string.Join(",", result1)}]");
+            Console.WriteLine("Expected: [24,12,8,6]\n");
+
+            // Test case 2: [-1,1,0,-3,3] => [0,0,9,0,0]
+            int[] nums2 = { -1, 1, 0, -3, 3 };
+            int[] result2 = solution.ProductExceptSelf(nums2);
+            Console.WriteLine("Test 2: nums = [-1,1,0,-3,3]");
+            Console.WriteLine($"Output:   [{string.Join(",", result2)}]");
+            Console.WriteLine("Expected: [0,0,9,0,0]\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
