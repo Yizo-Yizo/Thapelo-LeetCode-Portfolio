@@ -82,6 +82,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [19] Kth Largest Element in an Array");
                 Console.WriteLine("  [20] Majority Element");
                 Console.WriteLine("  [21] Product of Array Except Self");
+                Console.WriteLine("  [22] Add Two Numbers");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -153,6 +154,9 @@ namespace LeetCodeConsole
                         break;
                     case "21":
                         RunProductOfArrayExceptSelf();
+                        break;
+                    case "22":
+                        RunAddTwoNumbers();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -760,6 +764,49 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunAddTwoNumbers()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Add Two Numbers");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new AddTwoNumbersSolution();
+
+            // Test case 1: [2,4,3] + [5,6,4] = [7,0,8] (342 + 465 = 807)
+            var l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+            var l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+            var result1 = solution.AddTwoNumbers(l1, l2);
+            Console.WriteLine("Test 1: l1 = [2,4,3], l2 = [5,6,4]");
+            Console.Write("Output:   [");
+            PrintList(result1);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: [7,0,8]\n");
+
+            // Test case 2: [0] + [0] = [0]
+            var l3 = new ListNode(0);
+            var l4 = new ListNode(0);
+            var result2 = solution.AddTwoNumbers(l3, l4);
+            Console.WriteLine("Test 2: l1 = [0], l2 = [0]");
+            Console.Write("Output:   [");
+            PrintList(result2);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: [0]\n");
+
+            // Test case 3: [9,9,9,9,9,9,9] + [9,9,9,9] = [8,9,9,9,0,0,0,1]
+            var l5 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
+            var l6 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+            var result3 = solution.AddTwoNumbers(l5, l6);
+            Console.WriteLine("Test 3: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]");
+            Console.Write("Output:   [");
+            PrintList(result3);
+            Console.WriteLine("]");
+            Console.WriteLine("Expected: [8,9,9,9,0,0,0,1]\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
