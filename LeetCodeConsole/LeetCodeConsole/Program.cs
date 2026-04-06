@@ -84,6 +84,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [21] Product of Array Except Self");
                 Console.WriteLine("  [22] Add Two Numbers");
                 Console.WriteLine("  [23] Lowest Common Ancestor of a Binary Search Tree");
+                Console.WriteLine("  [24] Number of Islands");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -161,6 +162,9 @@ namespace LeetCodeConsole
                         break;
                     case "23":
                         RunLowestCommonAncestorBST();
+                        break;
+                    case "24":
+                        RunNumberOfIslands();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -768,6 +772,53 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunNumberOfIslands()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: Number of Islands");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new NumberOfIslandsSolution();
+
+            // Test case 1: 1 island
+            char[][] grid1 =
+            {
+                new char[] { '1','1','1','1','0' },
+                new char[] { '1','1','0','1','0' },
+                new char[] { '1','1','0','0','0' },
+                new char[] { '0','0','0','0','0' }
+            };
+            int result1 = solution.NumIslands(grid1);
+            Console.WriteLine("Test 1: grid =");
+            Console.WriteLine("  [1,1,1,1,0]");
+            Console.WriteLine("  [1,1,0,1,0]");
+            Console.WriteLine("  [1,1,0,0,0]");
+            Console.WriteLine("  [0,0,0,0,0]");
+            Console.WriteLine($"Output:   {result1}");
+            Console.WriteLine("Expected: 1\n");
+
+            // Test case 2: 3 islands
+            char[][] grid2 =
+            {
+                new char[] { '1','1','0','0','0' },
+                new char[] { '1','1','0','0','0' },
+                new char[] { '0','0','1','0','0' },
+                new char[] { '0','0','0','1','1' }
+            };
+            int result2 = solution.NumIslands(grid2);
+            Console.WriteLine("Test 2: grid =");
+            Console.WriteLine("  [1,1,0,0,0]");
+            Console.WriteLine("  [1,1,0,0,0]");
+            Console.WriteLine("  [0,0,1,0,0]");
+            Console.WriteLine("  [0,0,0,1,1]");
+            Console.WriteLine($"Output:   {result2}");
+            Console.WriteLine("Expected: 3\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
