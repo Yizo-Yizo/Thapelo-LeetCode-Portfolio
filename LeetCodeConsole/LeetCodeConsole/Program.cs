@@ -83,6 +83,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [20] Majority Element");
                 Console.WriteLine("  [21] Product of Array Except Self");
                 Console.WriteLine("  [22] Add Two Numbers");
+                Console.WriteLine("  [23] Lowest Common Ancestor of a Binary Search Tree");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -157,6 +158,9 @@ namespace LeetCodeConsole
                         break;
                     case "22":
                         RunAddTwoNumbers();
+                        break;
+                    case "23":
+                        RunLowestCommonAncestorBST();
                         break;
                     case "0":
                         inCSharpMenu = false;
@@ -764,6 +768,44 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunLowestCommonAncestorBST()
+        {
+            Console.Clear();
+            Console.WriteLine("══════════════════════════════════════════════════════════");
+            Console.WriteLine("  Problem: Lowest Common Ancestor of a Binary Search Tree");
+            Console.WriteLine("══════════════════════════════════════════════════════════\n");
+
+            var solution = new LowestCommonAncestorOfBinarySearchTreeSolution();
+
+            // Test case 1: root = [6,2,8,0,4,7,9], p = 2, q = 8 => 6
+            var root1 = new TreeNode(6,
+                new TreeNode(2, new TreeNode(0), new TreeNode(4)),
+                new TreeNode(8, new TreeNode(7), new TreeNode(9)));
+            var result1 = solution.LowestCommonAncestor(root1, new TreeNode(2), new TreeNode(8));
+            Console.WriteLine("Test 1: root = [6,2,8,0,4,7,9], p = 2, q = 8");
+            Console.WriteLine($"Output:   {result1.val}");
+            Console.WriteLine("Expected: 6\n");
+
+            // Test case 2: root = [6,2,8,0,4,7,9], p = 2, q = 4 => 2
+            var root2 = new TreeNode(6,
+                new TreeNode(2, new TreeNode(0), new TreeNode(4)),
+                new TreeNode(8, new TreeNode(7), new TreeNode(9)));
+            var result2 = solution.LowestCommonAncestor(root2, new TreeNode(2), new TreeNode(4));
+            Console.WriteLine("Test 2: root = [6,2,8,0,4,7,9], p = 2, q = 4");
+            Console.WriteLine($"Output:   {result2.val}");
+            Console.WriteLine("Expected: 2\n");
+
+            // Test case 3: root = [2,1], p = 2, q = 1 => 2
+            var root3 = new TreeNode(2, new TreeNode(1), null);
+            var result3 = solution.LowestCommonAncestor(root3, new TreeNode(2), new TreeNode(1));
+            Console.WriteLine("Test 3: root = [2,1], p = 2, q = 1");
+            Console.WriteLine($"Output:   {result3.val}");
+            Console.WriteLine("Expected: 2\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
