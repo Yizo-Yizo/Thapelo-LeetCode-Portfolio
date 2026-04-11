@@ -85,6 +85,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [22] Add Two Numbers");
                 Console.WriteLine("  [23] Lowest Common Ancestor of a Binary Search Tree");
                 Console.WriteLine("  [24] Number of Islands");
+                Console.WriteLine("  [25] House Robber");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -166,6 +167,9 @@ namespace LeetCodeConsole
                     case "24":
                         RunNumberOfIslands();
                         break;
+                    case "25":
+                        RunHouseRobber();
+                        break;
                     case "0":
                         inCSharpMenu = false;
                         break;
@@ -199,6 +203,7 @@ namespace LeetCodeConsole
                 Console.WriteLine("  [7] Nth Highest Salary");
                 Console.WriteLine("  [8] Department Top Three Salaries");
                 Console.WriteLine("  [9] Consecutive Numbers");
+                Console.WriteLine("  [10] Trips and Users");
                 Console.WriteLine();
                 Console.WriteLine("  [0] Back to Main Menu");
                 Console.WriteLine();
@@ -234,6 +239,9 @@ namespace LeetCodeConsole
                         break;
                     case "9":
                         ConsecutiveNumbers.DisplayProblem();
+                        break;
+                    case "10":
+                        TripAndUsers.DisplayProblem();
                         break;
                     case "0":
                         inSQLMenu = false;
@@ -772,6 +780,42 @@ namespace LeetCodeConsole
             Console.WriteLine("Test 5: n = 1");
             Console.WriteLine($"Output: {result5}");
             Console.WriteLine("Expected: 1\n");
+
+            Console.WriteLine("\nPress any key to return to menu...");
+            Console.ReadKey();
+        }
+
+        static void RunHouseRobber()
+        {
+            Console.Clear();
+            Console.WriteLine("═══════════════════════════════════════");
+            Console.WriteLine("  Problem: House Robber");
+            Console.WriteLine("═══════════════════════════════════════\n");
+
+            var solution = new HouseRobberSolution();
+
+            // Test case 1: [1,2,3,1] => 4
+            int[] nums1 = { 1, 2, 3, 1 };
+            int result1 = solution.Rob(nums1);
+            Console.WriteLine("Test 1: nums = [1,2,3,1]");
+            Console.WriteLine($"Output:   {result1}");
+            Console.WriteLine("Expected: 4");
+            Console.WriteLine("Explanation: Rob house 1 (1) then house 3 (3) = 4\n");
+
+            // Test case 2: [2,7,9,3,1] => 12
+            int[] nums2 = { 2, 7, 9, 3, 1 };
+            int result2 = solution.Rob(nums2);
+            Console.WriteLine("Test 2: nums = [2,7,9,3,1]");
+            Console.WriteLine($"Output:   {result2}");
+            Console.WriteLine("Expected: 12");
+            Console.WriteLine("Explanation: Rob house 1 (2), house 3 (9), house 5 (1) = 12\n");
+
+            // Test case 3: [2,1] => 2
+            int[] nums3 = { 2, 1 };
+            int result3 = solution.Rob(nums3);
+            Console.WriteLine("Test 3: nums = [2,1]");
+            Console.WriteLine($"Output:   {result3}");
+            Console.WriteLine("Expected: 2\n");
 
             Console.WriteLine("\nPress any key to return to menu...");
             Console.ReadKey();
